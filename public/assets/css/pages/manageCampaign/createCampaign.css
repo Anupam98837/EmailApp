@@ -1,0 +1,230 @@
+/* manageCampaign.css */
+
+/* Import shared variables & typography */
+/* @import url('../../common/main.css'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global font */
+body, .form-label, .btn {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Wizard card */
+.wizard-card {
+  background: var(--bg-body);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+  margin: var(--space-lg) auto;
+  /* max-width: 700px; */
+}
+
+/* Wizard steps */
+/* .wizard-nav {
+  gap: var(--space-md);
+}
+.wizard-nav .nav-link {
+  background: var(--light-color);
+  color: var(--text-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm) var(--space-md);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.wizard-nav .nav-link.active {
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+.wizard-nav .nav-link:hover {
+  background: var(--secondary-color);
+  color: #fff;
+} */
+
+/* Step content */
+.wizard-body {
+  background: #fff;
+  border-top: 3px solid var(--secondary-color);
+  padding: var(--space-lg);
+}
+.step-content { display: none; }
+.step-content.active { display: block; }
+
+/* Buttons */
+.btn-primary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: var(--transition);
+}
+.btn-primary:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+.btn-secondary {
+  background: var(--light-color);
+  border-color: var(--border-color);
+  color: var(--text-color);
+}
+.btn-secondary:hover {
+  background: var(--light-color);
+  opacity: 0.9;
+}
+.btn-success {
+  background: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Preview panel */
+#tmplPreview {
+  background: var(--light-color);
+}
+
+/* Footer */
+.wizard-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--space-md);
+}
+.wizard-footer .btn {
+  min-width: 140px;
+}
+
+/* Spinner */
+#submitSpinner {
+  vertical-align: middle;
+}
+/* === Wizard Stepper Styles === */
+.wizard-nav {
+  counter-reset: step;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.wizard-nav .nav-item {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.wizard-nav .nav-link {
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  padding: 0;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+.wizard-nav .nav-link::before {
+  content: counter(step);
+  counter-increment: step;
+  width: 40px;
+  height: 40px;
+  line-height: 38px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  display: inline-block;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.wizard-nav .nav-link.active::before {
+  background-color: var(--secondary-color);
+  color: white;
+  border-color: var(--secondary-color);
+}
+
+.wizard-nav .nav-link.active {
+  color: var(--secondary-color);
+}
+
+.wizard-nav .nav-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: -50%;
+  width: 100%;
+  height: 2px;
+  background-color: #d1d5db;
+  z-index: -1;
+}
+
+.wizard-nav .nav-item.active ~ .nav-item::before {
+  border-color: #d1d5db;
+}
+
+.wizard-nav .nav-item.active ~ .nav-item::after {
+  background-color: #d1d5db;
+}
+
+/* --- Wizard Progress Bar Styles --- */
+.wizard-progress {
+  position: relative;
+  height: 4px;
+  background-color: #e5e7eb; /* light gray */
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.wizard-progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: var(--secondary-color); /* blue */
+  transition: width 0.4s ease;
+}
+
+h1 {
+  color: var(--secondary-color) !important;
+}
+/* → Device selector toolbar */
+#tmplPreview .preview-tools {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+#tmplPreview .preview-tools .device-btn {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #374151;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background .2s, color .2s;
+}
+#tmplPreview .preview-tools .device-btn:hover {
+  background: #e5e7eb;
+}
+#tmplPreview .preview-tools .device-btn.active {
+  background: #6366f1;
+  border-color: #4f46e5;
+  color: #fff;
+}
+
+/* → Campaign preview container */
+#tmplPreview .campaign-preview-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+}
+#tmplPreview .campaign-preview-container.desktop { max-width: 768px; }
+#tmplPreview .campaign-preview-container.tablet  { max-width: 600px; }
+#tmplPreview .campaign-preview-container.mobile  { max-width: 375px; }

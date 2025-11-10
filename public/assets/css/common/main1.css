@@ -1,0 +1,298 @@
+/* custom-utility-theme.css */
+
+/* — Theme Variables — */
+/* public/css/main1.css */
+
+:root {
+    /* Colors */
+    --primary-color:    #1a202c;
+    --secondary-color:  #4a5568;
+    --accent-color:     #e53e3e;
+    --light-color:      #edf2f7;
+    --border-color:     #cbd5e0;
+    --text-color:       #2d3748;
+    --bg-body:          #f7fafc;
+  
+    /* Semantic */
+    --info-color:       #4299e1;
+    --success-color:    #48bb78;
+    --warning-color:    #dd6b20;
+    --danger-color:     #e53e3e;
+  
+    /* Typography & spacing */
+    --font-sans:        'Inter', sans-serif;
+    --font-head:        'Poppins', sans-serif;
+    --space-xs:         4px;
+    --space-sm:         6px;
+    --space-md:         12px;
+    --space-lg:         16px;
+    --space-xl:         24px;
+    --radius-md:        8px;
+    --shadow-sm:        0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md:        0 4px 6px rgba(0,0,0,0.1);
+    --transition:       all 0.3s ease;
+    --btn-font-size:    0.875rem;
+  }
+  
+  
+  /* — Base Elements — */
+  body {
+    background: var(--bg-body);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    margin: 0;
+  }
+  
+  a {
+    color: var(--secondary-color);
+    transition: var(--transition);
+  }
+  a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+  
+  /* — Buttons — */
+  .btn {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-size: var(--btn-font-size);
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: var(--space-sm) var(--space-md);
+    line-height: 1.5;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    cursor: pointer;
+  }
+  
+  /* Primary / Secondary / Semantic */
+  .btn-primary     { background: var(--primary-color);   border-color: var(--primary-color);   color:#fff; }
+  .btn-primary:hover { background: var(--secondary-color); border-color: var(--secondary-color); }
+  
+  .btn-secondary   { background: var(--secondary-color); border-color: var(--secondary-color); color:#fff; }
+  .btn-secondary:hover { background: var(--primary-color); }
+  
+  .btn-success     { background: var(--success-color);   border-color: var(--success-color);   color:#fff; }
+  .btn-success:hover { background: #0e8f6a; }
+  
+  .btn-info        { background: var(--info-color);      border-color: var(--info-color);      color:#fff; }
+  .btn-info:hover    { background: #256fdd; }
+  
+  .btn-warning     { background: var(--warning-color);   border-color: var(--warning-color);   color:var(--text-color); }
+  .btn-warning:hover { background: #d48807; }
+  
+  .btn-danger      { background: var(--danger-color);    border-color: var(--danger-color);    color:#fff; }
+  .btn-danger:hover  { background: #c0392b; }
+  
+  .btn-light       { background: var(--light-color);     border-color: var(--light-color);     color:var(--text-color); }
+  .btn-light:hover   { background: #e1e3e6; }
+  
+  /* — Outline Buttons — */
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-info,
+  .btn-outline-warning,
+  .btn-outline-danger {
+    background: transparent;
+    font-family: var(--font-head);
+    font-size: var(--btn-font-size);
+    font-weight: 600;
+    border: 1px solid transparent;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+  }
+  
+  .btn-outline-primary   { border-color: var(--primary-color);   color: var(--primary-color); }
+  .btn-outline-secondary { border-color: var(--secondary-color); color: var(--secondary-color); }
+  .btn-outline-success   { border-color: var(--success-color);   color: var(--success-color); }
+  .btn-outline-info      { border-color: var(--info-color);      color: var(--info-color); }
+  .btn-outline-warning   { border-color: var(--warning-color);   color: var(--warning-color); }
+  .btn-outline-danger    { border-color: var(--danger-color);    color: var(--danger-color); }
+  
+  .btn-outline-primary:hover   { background: var(--primary-color);   color:#fff; }
+  .btn-outline-secondary:hover { background: var(--secondary-color); color:#fff; }
+  .btn-outline-success:hover   { background: var(--success-color);   color:#fff; }
+  .btn-outline-info:hover      { background: var(--info-color);      color:#fff; }
+  .btn-outline-warning:hover   { background: var(--warning-color);   color:var(--text-color); }
+  .btn-outline-danger:hover    { background: var(--danger-color);    color:#fff; }
+  
+  /* — Badges — */
+  .badge {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--btn-font-size);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    font-family: var(--font-head);
+  }
+  .badge-primary   { background: var(--primary-color);   color:#fff; }
+  .badge-secondary { background: var(--secondary-color); color:#fff; }
+  .badge-info      { background: var(--info-color);      color:#fff; }
+  .badge-success   { background: var(--success-color);   color:#fff; }
+  .badge-warning   { background: var(--warning-color);   color:var(--text-color); }
+  .badge-danger    { background: var(--danger-color);    color:#fff; }
+  
+  /* — Tables: apply to all .table variants — */
+  .table,
+  .table-striped,
+  .table-bordered,
+  .table-hover,
+  .table-sm {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-family: var(--font-sans);
+  }
+  .table thead th,
+  .table-striped thead th,
+  .table-bordered thead th,
+  .table-hover thead th,
+  .table-sm thead th {
+    background: var(--light-color);
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid var(--border-color);
+    padding: var(--space-sm) var(--space-md);
+  }
+  .table tbody tr,
+  .table-striped tbody tr,
+  .table-bordered tbody tr,
+  .table-hover tbody tr,
+  .table-sm tbody tr {
+    display: table-row;
+    vertical-align: middle;       /* center items vertically */
+    align-items: center;          /* flex fallback, no harm */
+  }
+  .table-striped tbody tr:nth-of-type(even) {
+    background: var(--bg-body);
+  }
+  .table-bordered {
+    border: 1px solid var(--border-color);
+  }
+  .table-bordered tbody td,
+  .table-bordered tbody th {
+    border: 1px solid var(--border-color);
+  }
+  .table tbody td,
+  .table-striped tbody td,
+  .table-hover tbody td,
+  .table-sm tbody td {
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+    padding: var(--space-sm) var(--space-md);
+  }
+  .table tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .table-hover tbody tr:hover {
+    background: #eef2ff;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+  }
+  
+  /* — Forms & Inputs — */
+  .form-control {
+    display: block;
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1rem;
+    color: var(--text-color);
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+  }
+  .form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.2rem rgba(15,76,129,0.25);
+    outline: none;
+  }
+  
+  /* — Pagination — */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-md);
+    list-style: none;
+    padding: 0;
+  }
+  .pagination .pager-btn {
+    margin: 0 var(--space-xs);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: #fff;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  .pagination .pager-btn:hover:not(:disabled) {
+    background: var(--light-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+  .pagination .pager-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+  
+  /* — Cards & Summary — */
+  .summary-card {
+    background: #fff;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-md);
+    text-align: center;
+    transition: var(--transition);
+  }
+  .summary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  }
+  .summary-card .icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--space-sm);
+  }
+  .summary-card p {
+  word-break: break-all;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+  /* — Search & Export — */
+  .search-export {
+    display: flex;
+    gap: var(--space-sm);
+  }
+  .search-export input {
+    width: 200px;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+  }
+  
+  /* — Utility Spacing — */
+  .m-0  { margin: 0 !important; }
+  .mt-1 { margin-top: var(--space-xs) !important; }
+  .mt-2 { margin-top: var(--space-sm) !important; }
+  .mt-3 { margin-top: var(--space-md) !important; }
+  .mt-4 { margin-top: var(--space-lg) !important; }
+  .mt-5 { margin-top: var(--space-xl) !important; }
+  .p-0  { padding: 0 !important; }
+  .p-1  { padding: var(--space-xs) !important; }
+  .p-2  { padding: var(--space-sm) !important; }
+  .p-3  { padding: var(--space-md) !important; }
+  .p-4  { padding: var(--space-lg) !important; }
+  .p-5  { padding: var(--space-xl) !important; }
+  

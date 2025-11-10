@@ -1,0 +1,54 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('mailer_settings', function (Blueprint $table) {
+            $table->id();
+
+            // link settings to a user
+            $table->foreignId('user_id')
+                  ->constrained()        // references users.id
+                  ->cascadeOnDelete();   // delete settings if user is removed
+
+            // mail driver (smtp, mailgun, etc.)
+            $table->string('mailer')->default('smtp');
+            // SMTP host
+            $table->string('host');
+            // SMTP port
+            $table->integer('port');
+            // SMTP username
+            $table->string('username');
+            // SMTP password
+            $table->string('password');
+            // encryption (tls, ssl, etc.)
+            $table->string('encryption')->nullable();
+            // From address and name
+            $table->string('from_address');
+            $table->string('from_name');
+
+            // whether this setting is the user's default (0 = no, 1 = yes)
+            $table->boolean('is_default')
+                  ->default(false)
+                  ->comment('Indicates if this mailer_setting is the default for the user');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('mailer_settings');
+    }
+};

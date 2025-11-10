@@ -1,0 +1,148 @@
+/* manage-lists.css */
+
+/* Import main variables & typography */
+/* @import url('../common/main.css'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Accordion as cards */
+.accordion .accordion-item {
+  background: var(--light-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg,1rem);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  animation: fadeInSlide 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.accordion-button {
+  background: transparent;
+  color: var(--dark-color);
+  font-weight: 600;
+}
+.accordion-button:not(.collapsed) {
+  background: var(--primary-color);
+  color: #fff;
+}
+.accordion-button .fa-list {
+  margin-right: 0.5rem;
+}
+
+/* Body animation */
+.accordion-body {
+  padding: 1.5rem;
+  animation: slideUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+.btn-outline-secondary {
+  color: var(--dark-color);
+  border-color: var(--border-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-outline-secondary:hover {
+  background-color: var(--light-color);
+  color: var(--primary-color);
+}
+
+/* Refresh & action icons */
+#refreshBtn i,
+.table-actions i {
+  transition: transform 0.2s ease;
+}
+#refreshBtn:hover i,
+.table-actions button:hover i {
+  transform: rotate(20deg);
+}
+#refreshBtn {
+  background-color: #fff;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+#refreshBtn:hover {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+thead th {
+  background: var(--secondary-color);
+  color: #fff;
+  font-weight: 500;
+}
+tbody tr {
+  transition: background 0.2s ease;
+}
+tbody tr:hover {
+  background: var(--light-color);
+}
+.table-actions button {
+  margin-right: 0.25rem;
+}
+
+/* Search-input icon */
+.search-input { position: relative; }
+.search-input input { padding-left: 2.5rem; }
+.search-input .fa-magnifying-glass {
+  position: absolute;
+  left: .75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+}
+
+/* Pagination buttons */
+.pager-btn {
+  margin: 0 .2rem;
+  font-size: .9rem;
+  min-width: 2.5rem;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: var(--radius-lg,1rem);
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.modal-header {
+  background: var(--primary-color);
+  color: #fff;
+  border-bottom: none;
+}
+.modal-footer {
+  border-top: none;
+}
+.btn-close {
+  filter: invert(1);
+}
+
+/* Keyframes */
+@keyframes fadeInSlide {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+  
